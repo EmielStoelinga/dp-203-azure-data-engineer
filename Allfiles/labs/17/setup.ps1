@@ -76,7 +76,6 @@ else {
 
 # Create Azure resources
 Write-Host "Creating $resourceGroupName resource group in $Region ..."
-New-AzResourceGroup -Name $resourceGroupName -Location $Region | Out-Null
 
 $storageAccountName = "store$suffix"
 $eventNsName = "events$suffix"
