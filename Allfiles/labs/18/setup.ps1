@@ -136,7 +136,6 @@ else {
         }
     }
 }
-Write-Host "Creating $resourceGroupName resource group in $Region ..."
 
 # Create Synapse workspace
 $synapseWorkspace = "synapse$suffix"

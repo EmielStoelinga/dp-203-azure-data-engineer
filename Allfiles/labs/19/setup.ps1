@@ -68,7 +68,6 @@ else {
     $Region = $locations.Get($rand).Location
 }
 
-Write-Host "Creating $resourceGroupName resource group in $Region ..."
 
 # Create Azure resources
 $eventNsName = "events$suffix"

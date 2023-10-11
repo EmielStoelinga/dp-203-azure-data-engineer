@@ -117,7 +117,6 @@ while ($stop -ne 1){
     }
     else {
         $resourceGroupName = "EStoelinga-dp203"
-        Write-Host "Creating $resourceGroupName resource group ..."
         $dbworkspace = "databricks$suffix"
         Write-Host "Creating $dbworkspace Azure Databricks workspace in $resourceGroupName resource group..."
         New-AzDatabricksWorkspace -Name $dbworkspace -ResourceGroupName $resourceGroupName -Location $Region -Sku premium | Out-Null
