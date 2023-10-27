@@ -56,9 +56,11 @@ $delay = 0, 30, 60, 90, 120 | Get-Random
 Start-Sleep -Seconds $delay # random delay to stagger requests from multi-student classes
 
 # Get a list of locations for Azure Databricks
+$preferred_list = "northeurope","westeurope"
 $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.Databricks" -and
-    $_.Providers -contains "Microsoft.Compute"
+    $_.Providers -contains "Microsoft.Compute" -and
+    $_.Location -in $preferred_list
 }
 $max_index = $locations.Count - 1
 $rand = (0..$max_index) | Get-Random

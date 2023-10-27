@@ -51,9 +51,11 @@ foreach ($provider in $provider_list){
 Write-Host "Your randomly-generated suffix for Azure resources is $suffix"
 
 # Get a list of locations for Azure Databricks
+$preferred_list = "northeurope","westeurope"
 $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.Databricks" -and
-    $_.Providers -contains "Microsoft.Compute"
+    $_.Providers -contains "Microsoft.Compute" -and
+    $_.Location -in $preferred_list
 }
 
 # Choose a region
