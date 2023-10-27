@@ -72,6 +72,7 @@ else {
     $Region = $locations.Get($rand).Location
 }
 
+$Region = "westeurope"
 # Try to create an Azure Databricks workspace in a region that has capacity
 $stop = 0
 $tried_regions = New-Object Collections.Generic.List[string]
